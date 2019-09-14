@@ -4,7 +4,7 @@ import Layout from '../../components/Layout'
 import Recaptcha from "react-google-recaptcha";
 
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
+const recaptchaRef = React.createRef();
 
 function encode(data) {
   return Object.keys(data)
@@ -109,11 +109,17 @@ export default class Index extends React.Component {
                     />
                   </div>
                 </div>
-                <Recaptcha
-            ref="recaptcha"
-            sitekey={RECAPTCHA_KEY}
-            onChange={this.handleRecaptcha}
-          />
+
+       ReactDOM.render(
+         <form onSubmit={() => { recaptchaRef.current.execute(); }}>
+           <ReCAPTCHA
+             ref={recaptchaRef}
+             size="invisible"
+             sitekey="6LfydbgUAAAAAPyF0pIMESowUq3i9w8XrAaOKJz1"
+           />
+         </form>,
+         document.body
+       );
                 <div className="field">
                   <button className="button is-link" type="submit">
                     Send

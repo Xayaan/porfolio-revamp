@@ -3,7 +3,7 @@ templateKey: index-page
 title: Building software for the Future.
 image: /img/home-jumbotron.jpg
 heading: Building software for the Future.
-subheading:
+subheading: asdsa
 mainpitch:
   title: Zayaan Ibrahim
   description: >

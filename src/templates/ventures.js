@@ -53,7 +53,7 @@ export default Ventures
 
 export const venturesQuery = graphql`
   query Ventures($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: { eq: "ventures" }) {
       html
       frontmatter {
         title
